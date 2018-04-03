@@ -11,7 +11,7 @@
 	  
       "queryEndpoints": {
         "retrieveTemplate": {
-          "queryTemplate": "{\n    \u0027_operation\u0027: \u0027find\u0027,\n    \u0027_operation_args\u0027: \n    {\n        \u0027query\u0027: { \"_id\" : ObjectId(\"5789471e80e00235a16436a3\")\n\n\t\t},\n        \u0027fields\u0027: {\n \t\t   \t\u0027_id\u0027: 0\n\t\t}\n    }\n}    ",
+          "queryTemplate": "{\n    \u0027_operation\u0027: \u0027find\u0027,\n    \u0027_operation_args\u0027: \n    {\n        \u0027query\u0027: {\n\n\t\t},\n        \u0027fields\u0027: {\n \t\t   \t\u0027_id\u0027: 0\n\t\t}\n    }\n}           ",
           "metaData": {},
           "tags": [],
           "bindVariables": {},
@@ -20,24 +20,31 @@
             "outputFormat": "JSON"
           },
           "name": "retrieveTemplate",
-          "timeCreated": "Fri Jul 21 10:42:45 EDT 2017",
+          "timeCreated": "Fri Jul 15 13:47:34 EDT 2016",
           "createdBy": "admin",
-          "description": "retrieve annotation template "
-        },		
-         "retrieveTemplateClone": {
-          "queryTemplate": "{\n    \u0027_operation\u0027: \u0027find\u0027,\n    \u0027_operation_args\u0027: \n    {\n        \u0027query\u0027: { \"_id\" : ObjectId(\"5789471e80e00235a16436a3\")\n\n\t\t},\n        \u0027fields\u0027: {\n \t\t   \t\u0027_id\u0027: 0,\n                        \u0027secret\u0027:0\n\t\t}\n    }\n}     ",
+          "description": "Retrieve annotation template "
+        },
+	"retrieveTemplateByName": {
+          "queryTemplate": "{\n    \u0027_operation\u0027: \u0027find\u0027,\n    \u0027_operation_args\u0027: \n    {\n        \u0027query\u0027: { \u0027name\u0027 : \u0027$app_name$\u0027 },\n        \u0027fields\u0027: {\n \t\t   \t\u0027_id\u0027: 0,\n                        \u0027secret\u0027:0,\n                        \u0027name\u0027:0\n\t\t}\n    }\n}        ",
           "metaData": {},
           "tags": [],
-          "bindVariables": {},
+          "bindVariables": {
+            "app_name": {
+              "name": "app_name",
+              "required": true,
+              "defaultValue": "",
+              "description": "application name"
+            }
+          },
           "stage": "UNVERIFIED",
           "outputFormat": {
             "outputFormat": "JSON"
           },
-          "name": "retrieveTemplateClone",
-          "timeCreated": "Fri Jul 21 10:37:03 EDT 2017",
+          "name": "retrieveTemplateByName",
+          "timeCreated": "Mon Apr 02 12:49:06 EDT 2018",
           "createdBy": "admin",
-          "description": "retrieve annotation template  "
-        }
+          "description": "retrieve annotation template     "
+        }        
       },
 	  
       "deleteEndpoints": {},

@@ -85,6 +85,20 @@
           "createdBy": "admin",
           "description": ""
         },
+        "findUser": {
+          "queryTemplate": "{\n\t\"_operation\" : \"find\" ,\n\t\"_operation_args\" : {\n\t\t\t\t\t\t\t\"query\" : { \u0027userType\u0027 : \u0027user\u0027} ,\n\t\t\t\t\t\t\t\"fields\" :{ \u0027_id\u0027 : 0 }\n\t\t\t\t\t\t}\n}\n ",
+          "metaData": {},
+          "tags": [],
+          "bindVariables": {},
+          "stage": "UNVERIFIED",
+          "outputFormat": {
+            "outputFormat": "JSON"
+          },
+          "name": "findUser",
+          "timeCreated": "Fri May 19 15:04:52 EDT 2017",
+          "createdBy": "admin",
+          "description": ""
+        },
         "findAllBindaasUsers": {
           "queryTemplate": "{\n\t\"_operation\" : \"find\" ,\n\t\"_operation_args\" : { \"query\" : { \u0027category\u0027:\u0027bindaas_user\u0027 } ,\n\t\t\t\t\t\t\t\"fields\" :{ \u0027_id\u0027 : 0 }\n                                       }\n}\n  ",
           "metaData": {},
@@ -140,7 +154,42 @@
           "timeCreated": "Mon Apr 24 11:56:45 EDT 2017",
           "createdBy": "admin",
           "description": "delete User By Email"
-        }
+        },
+         "setUserType": {
+          "queryTemplate": "{\n\t\"_operation\" : \"update\" ,\n\t\"_operation_args\" : {\n\t\t\t\t        \t\"query\" : { \u0027fname\u0027 : \u0027$fname$\u0027,  \u0027lname\u0027 : \u0027$lname$\u0027, \u0027email\u0027 : \u0027$email$\u0027} ,\n\t\t\t\t\t\t\"update\": {$set: {\"userType\":\"$userType$\"} }\n\t\t\t\t\t}\n}   ",
+          "tags": [],
+          "bindVariables": {
+            "fname": {
+              "name": "fname",
+              "required": true,
+              "defaultValue": "",
+              "description": ""
+            },
+            "lname": {
+              "name": "lname",
+              "required": true,
+              "defaultValue": "",
+              "description": ""
+            },
+            "email": {
+              "name": "email",
+              "required": true,
+              "defaultValue": "",
+              "description": ""
+            },
+            "userType": {
+              "name": "userType",
+              "required": true,
+              "defaultValue": "",
+              "description": ""
+            }
+          },
+          "stage": "UNVERIFIED",
+          "name": "setUserType",
+          "timeCreated": "Fri Jan 26 14:41:20 EST 2018",
+          "createdBy": "admin",
+          "description": ""
+        }     
       },
       "submitEndpoints": {
         "csvFile": {

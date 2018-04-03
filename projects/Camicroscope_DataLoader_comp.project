@@ -4,7 +4,7 @@
       "dataSource": {
         "host": "127.0.0.1",
         "port": "27017",
-        "db": "quip",
+        "db": "quip_comp",
         "collection": "images",
         "initialize": true
       },
@@ -115,7 +115,7 @@
           "description": "Retrieves file location for given case ID  "
         },
         "getAll": {
-       "queryTemplate": "{\n\t\"_operation\" : \"find\" ,\n\t\"_operation_args\" : {\n\t\t\t\t\t\t\t\"query\" : {  } ,\n\t\t\t\t\t\t\t\"fields\" :{ \u0027_id\u0027 : 0, \u0027case_id\u0027: 1, \u0027status\u0027: 1, \u0027assign_to\u0027: 1, \u0027is_processing\u0027: 1, \u0027is_curated\u0027: 1, \u0027width\u0027: 1, \u0027height\u0027: 1 },\n\t\t\t\t\t\t\t\"limit\" : 1000\n\t\t\t\t\t\t}\n}\n ",   
+          "queryTemplate": "{\n\t\"_operation\" : \"find\" ,\n\t\"_operation_args\" : {\n\t\t\t\t\t\t\t\"query\" : {  } ,\n\t\t\t\t\t\t\t\"fields\" :{ \u0027_id\u0027 : 0, \u0027case_id\u0027: 1, \u0027status\u0027: 1, \u0027assign_to\u0027: 1, \u0027is_processing\u0027: 1, \u0027is_curated\u0027: 1, \u0027width\u0027: 1, \u0027height\u0027: 1 },\n\t\t\t\t\t\t\t\"limit\" : 1000\n\t\t\t\t\t\t}\n}\n ",
           "metaData": {},
           "tags": [],
           "bindVariables": {},
