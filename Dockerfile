@@ -4,8 +4,8 @@
 
 # VERSION               0.3.1
 
-FROM     ubuntu:16.04
-MAINTAINER Ganesh Iyer "lastlegion@gmail.com"
+FROM     pradeeban/bindaas:3.0.2
+#MAINTAINER Ganesh Iyer "lastlegion@gmail.com"
 
 # build with
 #  sudo docker build --rm=true -t="repo/imgname" .
@@ -47,18 +47,19 @@ WORKDIR /data
 #EXPOSE 28017
 
 
-# Bindaas
-RUN mkdir -p /root/bindaas
-#COPY bindaas.tar.gz /root/bindaas/
-ADD http://imaging.cci.emory.edu/wiki/download/attachments/4915228/bindaas-dist-2.0.2-201603312230-min.tar.gz?version=1&modificationDate=1459806174096&api=v2 /root/bindaas/bindaas.tar.gz
-WORKDIR /root/bindaas
-RUN tar -xvf bindaas.tar.gz && rm bindaas.tar.gz
-COPY projects /root/bindaas/bin/projects
-#COPY Camicroscope_DataLoader.project /root/bindaas/bin/projects/Camicroscope_DataLoader.project
-#COPY Camicroscope_Annotations.project /root/bindaas/bin/projects/Camicroscope_Annotations.project
-COPY bindaas.config.json /root/bindaas/bin/
-COPY trusted-applications.config.json /root/bindaas/bin/trusted-applications.config.json
+## Bindaas
+#RUN mkdir -p /root/bindaas
+##COPY bindaas.tar.gz /root/bindaas/
+#ADD http://imaging.cci.emory.edu/wiki/download/attachments/4915228/bindaas-dist-2.0.2-201603312230-min.tar.gz?version=1&modificationDate=1459806174096&api=v2 /root/bindaas/bindaas.tar.gz
+#WORKDIR /root/bindaas
+#RUN tar -xvf bindaas.tar.gz && rm bindaas.tar.gz
+#COPY projects /root/bindaas/bin/projects
+##COPY Camicroscope_DataLoader.project /root/bindaas/bin/projects/Camicroscope_DataLoader.project
+##COPY Camicroscope_Annotations.project /root/bindaas/bin/projects/Camicroscope_Annotations.project
+#COPY bindaas.config.json /root/bindaas/bin/
+#COPY trusted-applications.config.json /root/bindaas/bin/trusted-applications.config.json
 
+#run --name bindaas-3 -p 8080:8080 -p 9099:9099 pradeeban/bindaas:3.0.2
 #EXPOSE 9099
 #EXPOSE 8080
 WORKDIR /root/bindaas/bin
